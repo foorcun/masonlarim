@@ -1,0 +1,3 @@
+Hello, {{name}}!
+
+The weather for {{city}} is currently....

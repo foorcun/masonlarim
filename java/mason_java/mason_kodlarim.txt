@@ -1,0 +1,5 @@
+mason new call_flow -o ./brick/call_flow
+2. mason path ekle
+3.  mason get
+
+mason make call_flow -c .\brick\call_flow\config.json -o ..\src\main\java\com\troya\mason\mason_kanban\
