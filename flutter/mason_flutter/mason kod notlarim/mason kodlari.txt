@@ -56,4 +56,4 @@ mason make home_page_brick -o ..\lib\
 
 mason make ho -c .\brick\ho\config.json -o ..\lib\
 
-mason make entity_brick -o .\generated\entity
+mason make entity_brick -o .\generated
