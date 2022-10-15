@@ -1,0 +1,11 @@
+1. mason new call_flow_restaurant -o ./bricks
+
+
+2. mason path ekle
+
+  call_flow_restaurant:
+    path: bricks/call_flow_restaurant
+
+3.  mason get
+
+mason make call_flow_restaurant -c .\bricks\call_flow_restaurant\config.json -o .\generated\call_flow_restaurant
