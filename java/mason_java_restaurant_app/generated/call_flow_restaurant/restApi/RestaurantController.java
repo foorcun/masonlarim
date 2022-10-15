@@ -32,8 +32,8 @@ public List<Restaurant> getAllRestaurant() throws InterruptedException, Executio
 
         
     @GetMapping("/getRestaurant")
-    public Restaurant getById(@RequestParam String documentId)throws InterruptedException, ExecutionException{
-        return restaurantManager.getById(documentId);
+    public Restaurant getById(@RequestParam String id)throws InterruptedException, ExecutionException{
+        return restaurantManager.getById(id);
     }
 
     @PostMapping("/createRestaurant")
