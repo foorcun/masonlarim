@@ -1,0 +1,5 @@
+bricks:
+  ho:
+    path: brick/ho
+  entity_brick:
+    path: brick/entity_brick
