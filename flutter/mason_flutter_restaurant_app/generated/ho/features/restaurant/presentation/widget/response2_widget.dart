@@ -14,7 +14,7 @@ class Response2 extends StatelessWidget {
         onPressed: () async {
           // DataApi.printTest();
           // DataApi.response2();
-          String json = '{"documentId": "beybibeybi"}';
+          String json = '{"id": 1}';
           Get.find<RestaurantController>().getRestaurant(Restaurant.fromJson(json));
         },
         child: Text("Response2"));

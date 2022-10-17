@@ -3,16 +3,22 @@ import 'package:http/http.dart' as http;
 
 import 'dart:convert';
 
+
+
 class FirebaseDataApi {
   static var httplocalhost = 'http://localhost:9090';
 
   static printTest() {
+
+
     print("deneme printi");
   }
 
-  static Future<Restaurant> response1(Restaurant restaurant) async {
-    Uri uri = Uri.parse(
-        "$httplocalhost/api/getRestaurant?id=" + restaurant.id!.toString());
+
+
+    static Future<Restaurant> response1(Restaurant restaurant) async {
+    Uri uri =
+        Uri.parse("$httplocalhost/api/getRestaurant?id=" + restaurant.id!.toString());
 
     http.Response response = await http.get(uri);
     print("gelen " + restaurant.id!.toString() + " : ");
@@ -25,7 +31,7 @@ class FirebaseDataApi {
     return Restaurant.fromJson(response.body);
   }
 
-  static Future<void> createRestaurant(Restaurant restaurant) async {
+    static Future<void> createRestaurant(Restaurant restaurant) async {
     Uri uri = Uri.parse("$httplocalhost/api/createRestaurant");
 
     // Map<String, dynamic> postData = {
@@ -49,7 +55,8 @@ class FirebaseDataApi {
     print(response.body);
   }
 
-  static Future<void> updateRestaurant(Restaurant restaurant) async {
+
+    static Future<void> updateRestaurant(Restaurant restaurant) async {
     Uri uri = Uri.parse("$httplocalhost/api/updateRestaurant");
 
     // Map<String, dynamic> postData = {
@@ -73,10 +80,10 @@ class FirebaseDataApi {
     print(response.body);
   }
 
-  static Future<void> deleteRestaurant(Restaurant restaurant) async {
+  static Future<void> deleteRestaurant(int id) async {
     // Uri uri = Uri.parse("$httplocalhost/delete?documentId=user_2");
     Uri uri =
-        Uri.parse("$httplocalhost/api/deleteRestaurant?id=${restaurant.id!}");
+        Uri.parse("$httplocalhost/api/deleteRestaurant?id=$id");
 
     // Map<String, dynamic> postData = {
     //   "documentId": "user_2",
@@ -95,7 +102,7 @@ class FirebaseDataApi {
     print(response.body);
   }
 
-  static Future<List<Restaurant>> getAllRestaurant() async {
+    static Future<List<Restaurant>> getAllRestaurant() async {
     // static Future<void> getAllUser() async {
     Uri uri = Uri.parse("$httplocalhost/api/getAllRestaurant");
 

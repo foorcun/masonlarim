@@ -13,13 +13,13 @@ class UpdateRestaurant2 extends StatelessWidget {
         onPressed: () async {
           // DataApi.printTest();
 
-          String json =
-              '{"documentId": "beybibeybi","name": "restaurantName2-updated"}';
+          String json = '{"id": 1,"restaurantName": "restaurantName2-updated"}';
 
           Restaurant restaurant = Restaurant.fromJson(json);
 
           // DataApi.updateUser(myUser);
-          Get.find<RestaurantController>().updateRestaurant(Restaurant.fromJson(json));
+          Get.find<RestaurantController>()
+              .updateRestaurant(Restaurant.fromJson(json));
         },
         child: Text("Update beybibeybi"));
   }

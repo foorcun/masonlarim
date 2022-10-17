@@ -15,20 +15,32 @@ class RestaurantController extends GetxController {
     // fetchCityler();
   }
 
-  Future<Restaurant> getRestaurant(Restaurant restaurant) async {
-    return FirebaseDataApi.response1(restaurant);
+  Future<Restaurant> getByIdRestaurant(int id) async {
+
+     for (var element in restaurantlar.value) {
+      if (element.id == id) {
+        return element;
+      }
+    }
+    print("restaurant id bulunamadi");
+    return Restaurant.empty();
   }
 
   Future<void> createRestaurant(Restaurant restaurant) async {
-    FirebaseDataApi.createRestaurant(restaurant);
+   await  FirebaseDataApi.createRestaurant(restaurant);
+   await getAllRestaurant();
   }
 
   Future<void> updateRestaurant(Restaurant restaurant) async {
-    FirebaseDataApi.updateRestaurant(restaurant);
+    restaurant.id =  restaurantlar[1].id;
+
+    await FirebaseDataApi.updateRestaurant(restaurant);
+    await getAllRestaurant();
   }
 
   Future<void> deleteRestaurant(Restaurant restaurant) async {
-    FirebaseDataApi.deleteRestaurant(restaurant);
+    await FirebaseDataApi.deleteRestaurant(restaurant);
+    await getAllRestaurant();
   }
 
   Future<List<Restaurant>> getAllRestaurant() async {

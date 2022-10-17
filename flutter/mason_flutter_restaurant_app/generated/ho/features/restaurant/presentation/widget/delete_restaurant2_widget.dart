@@ -13,12 +13,8 @@ class DeleteRestaurant2 extends StatelessWidget {
         onPressed: () async {
           // DataApi.printTest();
 
-          String json =
-              '{"documentId": "beybibeybi","name": ""}';
-
-          Restaurant restaurant = Restaurant.fromJson(json);
-          // DataApi.deleteUser(myUser);
-          Get.find<RestaurantController>().deleteRestaurant(Restaurant.fromJson(json));
+          
+          Get.find<RestaurantController>().deleteRestaurant(2);
         },
         child: Text("Delete beybibeybi"));
   }

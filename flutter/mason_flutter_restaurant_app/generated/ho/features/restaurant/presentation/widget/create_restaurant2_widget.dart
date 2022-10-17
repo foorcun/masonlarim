@@ -15,7 +15,7 @@ class CreateRestaurant2 extends StatelessWidget {
           // DataApi.printTest();
 
           String json =
-              '{"documentId": "beybibeybi","name": "restaurantName2"}';
+              '{"documentId": 1,"name": "restaurantName2"}';
 
           Restaurant restaurant = Restaurant.fromJson(json);
 
