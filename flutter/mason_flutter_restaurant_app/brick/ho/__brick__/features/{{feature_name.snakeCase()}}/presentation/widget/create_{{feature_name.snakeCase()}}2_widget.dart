@@ -15,7 +15,7 @@ class Create{{feature_name.pascalCase()}}2 extends StatelessWidget {
           // DataApi.printTest();
 
           String json =
-              '{"documentId": "{{documentId2}}","name": "{{feature_name.camelCase()}}Name2"}';
+              '{"documentId": 1,"name": "{{feature_name.camelCase()}}Name2"}';
 
           {{feature_name.pascalCase()}} {{feature_name.camelCase()}} = {{feature_name.pascalCase()}}.fromJson(json);
 

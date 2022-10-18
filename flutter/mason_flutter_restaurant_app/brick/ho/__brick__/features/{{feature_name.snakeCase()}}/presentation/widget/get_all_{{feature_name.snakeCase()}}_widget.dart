@@ -31,7 +31,7 @@ class GetAll{{feature_name.pascalCase()}} extends StatelessWidget {
                   return ListTile(
                     title: Text(Get.find<{{feature_name.pascalCase()}}Controller>()
                         .{{feature_name.camelCase()}}lar[index]
-                        .id!),
+                        .id!.toString()),
                   );
                 }),
           ),

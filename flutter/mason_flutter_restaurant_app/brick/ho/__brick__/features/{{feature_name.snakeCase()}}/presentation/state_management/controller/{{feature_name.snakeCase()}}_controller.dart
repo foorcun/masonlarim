@@ -15,20 +15,32 @@ class {{feature_name.pascalCase()}}Controller extends GetxController {
     // fetchCityler();
   }
 
-  Future<{{feature_name.pascalCase()}}> get{{feature_name.pascalCase()}}({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
-    return FirebaseDataApi.response1({{feature_name.camelCase()}});
+  Future<{{feature_name.pascalCase()}}> getById{{feature_name.pascalCase()}}(int id) async {
+
+     for (var element in {{feature_name.camelCase()}}lar.value) {
+      if (element.id == id) {
+        return element;
+      }
+    }
+    print("{{feature_name.camelCase()}} id bulunamadi");
+    return {{feature_name.pascalCase()}}.empty();
   }
 
   Future<void> create{{feature_name.pascalCase()}}({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
-    FirebaseDataApi.create{{feature_name.pascalCase()}}({{feature_name.camelCase()}});
+   await  FirebaseDataApi.create{{feature_name.pascalCase()}}({{feature_name.camelCase()}});
+   await getAll{{feature_name.pascalCase()}}();
   }
 
   Future<void> update{{feature_name.pascalCase()}}({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
-    FirebaseDataApi.update{{feature_name.pascalCase()}}({{feature_name.camelCase()}});
+    {{feature_name.camelCase()}}.id =  {{feature_name.camelCase()}}lar[1].id;
+
+    await FirebaseDataApi.update{{feature_name.pascalCase()}}({{feature_name.camelCase()}});
+    await getAll{{feature_name.pascalCase()}}();
   }
 
-  Future<void> delete{{feature_name.pascalCase()}}({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
-    FirebaseDataApi.delete{{feature_name.pascalCase()}}({{feature_name.camelCase()}});
+  Future<void> delete{{feature_name.pascalCase()}}(int id) async {
+    await FirebaseDataApi.delete{{feature_name.pascalCase()}}(id);
+    await getAll{{feature_name.pascalCase()}}();
   }
 
   Future<List<{{feature_name.pascalCase()}}>> getAll{{feature_name.pascalCase()}}() async {

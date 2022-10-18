@@ -2,7 +2,7 @@
 class {{entity_name.pascalCase()}} {
 
   //field variable ler
-  String? id;
+  int? id;
   String? {{entity_name.camelCase()}}Name;
 
   {{entity_name.pascalCase()}}.empty();

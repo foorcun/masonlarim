@@ -13,12 +13,8 @@ class Delete{{feature_name.pascalCase()}}2 extends StatelessWidget {
         onPressed: () async {
           // DataApi.printTest();
 
-          String json =
-              '{"documentId": "{{documentId2}}","name": ""}';
-
-          {{feature_name.pascalCase()}} {{feature_name.camelCase()}} = {{feature_name.pascalCase()}}.fromJson(json);
-          // DataApi.deleteUser(myUser);
-          Get.find<{{feature_name.pascalCase()}}Controller>().delete{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}.fromJson(json));
+          
+          Get.find<{{feature_name.pascalCase()}}Controller>().delete{{feature_name.pascalCase()}}(2);
         },
         child: Text("Delete {{documentId2}}"));
   }

@@ -38,8 +38,8 @@ class RestaurantController extends GetxController {
     await getAllRestaurant();
   }
 
-  Future<void> deleteRestaurant(Restaurant restaurant) async {
-    await FirebaseDataApi.deleteRestaurant(restaurant);
+  Future<void> deleteRestaurant(int id) async {
+    await FirebaseDataApi.deleteRestaurant(id);
     await getAllRestaurant();
   }
 

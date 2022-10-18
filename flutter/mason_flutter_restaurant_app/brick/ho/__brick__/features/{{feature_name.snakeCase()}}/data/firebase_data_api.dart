@@ -18,10 +18,10 @@ class FirebaseDataApi {
 
     static Future<{{feature_name.pascalCase()}}> response1({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
     Uri uri =
-        Uri.parse("$httplocalhost/api/get{{feature_name.pascalCase()}}?id=" + {{feature_name.camelCase()}}.id!);
+        Uri.parse("$httplocalhost/api/get{{feature_name.pascalCase()}}?id=" + {{feature_name.camelCase()}}.id!.toString());
 
     http.Response response = await http.get(uri);
-    print("gelen " + {{feature_name.camelCase()}}.id! + " : ");
+    print("gelen " + {{feature_name.camelCase()}}.id!.toString() + " : ");
     print(response.body);
     // return response;
 
@@ -80,10 +80,10 @@ class FirebaseDataApi {
     print(response.body);
   }
 
-  static Future<void> delete{{feature_name.pascalCase()}}({{feature_name.pascalCase()}} {{feature_name.camelCase()}}) async {
+  static Future<void> delete{{feature_name.pascalCase()}}(int id) async {
     // Uri uri = Uri.parse("$httplocalhost/delete?documentId=user_2");
     Uri uri =
-        Uri.parse("$httplocalhost/api/delete{{feature_name.pascalCase()}}?id=${{{feature_name.camelCase()}}.id!}");
+        Uri.parse("$httplocalhost/api/delete{{feature_name.pascalCase()}}?id=$id");
 
     // Map<String, dynamic> postData = {
     //   "documentId": "user_2",

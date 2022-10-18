@@ -14,8 +14,9 @@ class Response1 extends StatelessWidget {
         onPressed: () async {
           // DataApi.printTest();
           // DataApi.response1();
-          String json = '{"documentId": "{{documentId1}}"}';
-          Get.find<{{feature_name.pascalCase()}}Controller>().get{{feature_name.pascalCase()}}({{feature_name.pascalCase()}}.fromJson(json));
+        var element =   Get.find<{{feature_name.pascalCase()}}Controller>().getById{{feature_name.pascalCase()}}(1);
+          print(element.toString());
+
         },
         child: Text("Response1"));
   }

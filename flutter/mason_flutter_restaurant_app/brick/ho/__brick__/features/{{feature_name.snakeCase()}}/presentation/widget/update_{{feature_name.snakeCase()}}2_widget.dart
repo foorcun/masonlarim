@@ -14,7 +14,7 @@ class Update{{feature_name.pascalCase()}}2 extends StatelessWidget {
           // DataApi.printTest();
 
           String json =
-              '{"documentId": "{{documentId2}}","name": "{{feature_name.camelCase()}}Name2-updated"}';
+              '{"id": 1,"{{feature_name.camelCase()}}Name": "{{feature_name.camelCase()}}Name2-updated"}';
 
           {{feature_name.pascalCase()}} {{feature_name.camelCase()}} = {{feature_name.pascalCase()}}.fromJson(json);
 
